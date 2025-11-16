@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "AI Oracle Risk Notifier",
+  "version": "0.1.0",
+  "description": "Warns users when signing transactions to risky contracts by querying the AI Oracle API gateway.",
+  "permissions": ["storage", "scripting", "activeTab", "tabs"],
+  "host_permissions": ["<all_urls>"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "AI Oracle"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["contentScript.js"],
+      "run_at": "document_start"
+    }
+  ],
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}

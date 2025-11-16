@@ -1,0 +1,15 @@
+fastapi
+uvicorn[standard]
+web3==6.12.0
+xgboost
+pandas
+numpy
+scikit-learn
+slither-analyzer
+aioredis
+redis
+httpx
+eth-account
+pyyaml
+requests
+tqdm

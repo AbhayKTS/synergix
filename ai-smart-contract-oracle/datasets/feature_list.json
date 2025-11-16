@@ -1,0 +1,7 @@
+[
+  "opcode_balance",
+  "opcode_calls",
+  "opcode_storage",
+  "bytecode_length",
+  "complexity_score"
+]

@@ -1,0 +1,20 @@
+{
+  "name": "ai-oracle-hardhat",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "compile": "hardhat compile",
+    "test": "hardhat test",
+    "deploy:sepolia": "hardhat run --network sepolia scripts/deploy.js"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^3.0.0",
+    "dotenv": "^16.4.0",
+    "hardhat": "^2.19.0"
+  },
+  "dependencies": {
+    "axios": "^1.13.2",
+    "chalk": "^4.1.2",
+    "ora": "^9.0.0"
+  }
+}
