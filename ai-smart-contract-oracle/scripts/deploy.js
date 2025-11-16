@@ -1,32 +1,30 @@
-const fs = require("fs");
-const path = require("path");
 const hre = require("hardhat");
 
 async function main() {
-    await hre.run("compile");
+  const [deployer] = await hre.ethers.getSigners();
 
-    const Factory = await hre.ethers.getContractFactory("AIOracleAggregator");
-    const contract = await Factory.deploy([], 3, 66);
-    await contract.waitForDeployment();
+  console.log("Deploying with:", deployer.address);
 
-    const address = await contract.getAddress();
-    console.log(`AIOracleAggregator deployed to: ${address}`);
+  const AIOracleAggregator = await hre.ethers.getContractFactory("AIOracleAggregator");
 
-    const deploymentsDir = path.join(__dirname, "..", "deployments");
-    fs.mkdirSync(deploymentsDir, { recursive: true });
-    const filePath = path.join(deploymentsDir, "sepolia.json");
+  const initialOracles = [deployer.address];      
+  const minRequiredSubmissions = 1;
+  const quorumPercent = 1;
 
-    const metadata = {
-        network: hre.network.name,
-        address,
-        deployedAt: new Date().toISOString()
-    };
+  const contract = await AIOracleAggregator.deploy(
+    initialOracles,
+    minRequiredSubmissions,
+    quorumPercent
+  );
 
-    fs.writeFileSync(filePath, JSON.stringify(metadata, null, 2));
-    console.log(`Saved deployment metadata to ${filePath}`);
+  await contract.waitForDeployment();
+
+  const address = await contract.getAddress();
+
+  console.log("AIOracleAggregator deployed at:", address);
 }
 
 main().catch((error) => {
-    console.error(error);
-    process.exit(1);
+  console.error(error);
+  process.exitCode = 1;
 });
