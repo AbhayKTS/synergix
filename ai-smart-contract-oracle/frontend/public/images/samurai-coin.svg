@@ -1,0 +1,56 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Samurai Oracle Coin</title>
+  <desc id="desc">Cyberpunk Samurai coin artwork with neon magenta glow.</desc>
+  <defs>
+    <radialGradient id="coinGlow" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#7B5CFF" stop-opacity="0.85" />
+      <stop offset="60%" stop-color="#4B1C62" stop-opacity="0.95" />
+      <stop offset="100%" stop-color="#120012" stop-opacity="1" />
+    </radialGradient>
+    <radialGradient id="ringGradient" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#E3C9FF" stop-opacity="0.8" />
+      <stop offset="80%" stop-color="#7C4DFF" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#2B103B" stop-opacity="1" />
+    </radialGradient>
+    <filter id="softGlow" x="-30%" y="-30%" width="160%" height="160%" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="15" result="blur" />
+      <feBlend in="SourceGraphic" in2="blur" mode="screen" />
+    </filter>
+  </defs>
+  <rect width="512" height="512" fill="#050109" />
+  <circle cx="256" cy="256" r="214" fill="url(#coinGlow)" filter="url(#softGlow)" />
+  <circle cx="256" cy="256" r="190" fill="url(#ringGradient)" stroke="#F7D8FF" stroke-width="6" stroke-opacity="0.35" />
+  <circle cx="256" cy="256" r="165" fill="#1A0B29" stroke="#F19CFF" stroke-width="3" stroke-opacity="0.4" />
+  <g stroke="#A670FF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="0.5">
+    <path d="M156 182 L120 158" />
+    <path d="M356 182 L392 158" />
+    <path d="M170 330 L130 360" />
+    <path d="M342 330 L382 360" />
+    <path d="M256 130 L256 96" />
+    <circle cx="256" cy="96" r="6" />
+    <circle cx="118" cy="158" r="6" />
+    <circle cx="394" cy="158" r="6" />
+    <circle cx="128" cy="360" r="6" />
+    <circle cx="384" cy="360" r="6" />
+  </g>
+  <g fill="#F0D7FF" opacity="0.75" font-family="'Rajdhani', 'Segoe UI', sans-serif" font-size="24" textLength="250" letter-spacing="4">
+    <text x="256" y="110" text-anchor="middle">SAMURAI ORACLE NETWORK</text>
+    <text x="256" y="400" text-anchor="middle">PREDICT • PROTECT</text>
+  </g>
+  <g fill="none" stroke="#FA7CFF" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M318 218 c0 34 -28 62 -62 62s-62 -28 -62 -62 28 -62 62 -62 62 28 62 62z" stroke-opacity="0.45" />
+  </g>
+  <g fill="#F5E9FF" stroke="#E28BFF" stroke-width="4" stroke-linejoin="round">
+    <path d="M256 190 l-42 20 v18 l12 -4 v28 l30 14 l30 -14 v-28 l12 4 v-18z" />
+    <path d="M214 242 v32 l42 20 l42 -20 v-32 l-18 6 v20 l-24 11 l-24 -11 v-20z" />
+    <path d="M230 212 l-24 -12 l24 -34 l26 8z" />
+    <path d="M282 212 l24 -12 l-24 -34 l-26 8z" />
+    <circle cx="214" cy="212" r="6" />
+    <circle cx="298" cy="212" r="6" />
+  </g>
+  <g fill="none" stroke="#FF2E84" stroke-width="3" stroke-linecap="round" opacity="0.6">
+    <path d="M180 256 h-32" />
+    <path d="M332 256 h32" />
+    <path d="M256 332 v32" />
+  </g>
+</svg>

@@ -1,0 +1,172 @@
+.nav-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 45;
+  background: linear-gradient(135deg, rgba(6, 6, 12, 0.88), rgba(10, 3, 18, 0.9));
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(14px);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.nav-header::after {
+  content: '';
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  width: 60%;
+  height: 40px;
+  transform: translateX(-50%);
+  background: radial-gradient(circle, rgba(216, 30, 61, 0.5), transparent 70%);
+  filter: blur(24px);
+  pointer-events: none;
+}
+
+.nav-mobile-panel {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: rgba(8, 6, 14, 0.9);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.55);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.nav-fog {
+  position: absolute;
+  width: 160%;
+  height: 120px;
+  left: -30%;
+  top: -30px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.25), transparent 70%);
+  filter: blur(32px);
+  opacity: 0.18;
+  animation: navFogDrift 18s linear infinite;
+  pointer-events: none;
+}
+
+.nav-fog--reverse {
+  top: auto;
+  bottom: -20px;
+  animation-direction: reverse;
+  animation-duration: 24s;
+}
+
+.nav-ember {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: radial-gradient(circle, rgba(255, 144, 72, 0.9), transparent 70%);
+  border-radius: 999px;
+  left: calc(10% + 80% * var(--rand-x, 0.5));
+  animation: navEmberRise 8s linear infinite;
+}
+
+.nav-item {
+  color: #b7b7c4;
+  background: rgba(18, 15, 26, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(12px);
+}
+
+.nav-item::after {
+  content: '';
+  position: absolute;
+  inset: 2px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(255, 86, 86, 0.22), transparent 60%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.nav-item-inactive:hover,
+.nav-item-inactive:focus-visible {
+  color: #ff3b3b;
+  opacity: 0.9;
+  box-shadow: inset 0 0 0 1px rgba(255, 59, 59, 0.35), 0 0 18px rgba(255, 59, 59, 0.25);
+}
+
+.nav-item-active {
+  color: #ff5656;
+  box-shadow: inset 0 0 0 1px rgba(255, 86, 86, 0.45), 0 0 22px rgba(255, 86, 86, 0.35);
+  background: rgba(36, 15, 23, 0.7);
+}
+
+.nav-item:hover::after,
+.nav-item:focus-visible::after,
+.nav-item-active::after {
+  opacity: 1;
+}
+
+.nav-item-icon svg {
+  width: 20px;
+  height: 20px;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.2));
+}
+
+.nav-item:hover .nav-item-icon svg,
+.nav-item:focus-visible .nav-item-icon svg,
+.nav-item-active .nav-item-icon svg {
+  transform: translateY(-1px);
+  filter: drop-shadow(0 0 18px rgba(255, 86, 86, 0.6));
+}
+
+.nav-mobile-panel .nav-item {
+  width: 100%;
+  justify-content: flex-start;
+}
+
+@keyframes navFogDrift {
+  0% {
+    transform: translateX(-15%);
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.35;
+  }
+  75% {
+    opacity: 0.35;
+  }
+  100% {
+    transform: translateX(15%);
+    opacity: 0;
+  }
+}
+
+@keyframes navEmberRise {
+  0% {
+    transform: translate3d(0, 30px, 0) scale(0.5);
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translate3d(0, -40px, 0) scale(1.2);
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav-header,
+  .nav-fog,
+  .nav-ember,
+  .nav-icon-glow svg {
+    animation: none !important;
+    transition: none !important;
+  }
+}

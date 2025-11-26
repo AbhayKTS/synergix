@@ -1,0 +1,20 @@
+{
+  "extends": [
+    "next/core-web-vitals",
+    "next/typescript"
+  ],
+  "ignorePatterns": [
+    "src/App.jsx",
+    "src/main.jsx",
+    "src/components/EventListener.jsx",
+    "src/components/FeatureBreakdown.jsx",
+    "src/components/IPFSEvidence.jsx",
+    "src/components/RiskGauge.jsx",
+    "src/components/SearchBar.jsx",
+    "src/components/StaticAnalysis.jsx",
+    "src/components/VerdictBadge.jsx",
+    "src/components/WalletProvider.jsx",
+    "src/lib/**",
+    "src/styles.css"
+  ]
+}
