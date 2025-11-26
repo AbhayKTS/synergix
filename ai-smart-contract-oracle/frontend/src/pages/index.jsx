@@ -127,6 +127,28 @@ export default function HomePage() {
           />
         ))}
   <Hero />
+        <motion.div
+          className="relative overflow-hidden rounded-[28px] border-2 border-emerald-400/60 bg-gradient-to-r from-emerald-950/70 via-purple-900/50 to-black/80 p-6 text-white shadow-[0_18px_40px_rgba(16,185,129,0.35)] backdrop-blur"
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          <span className="pointer-events-none absolute inset-x-4 top-0 h-1 rounded-full bg-gradient-to-r from-emerald-400 via-rose-400 to-purple-400 opacity-70" />
+          <div className="relative flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
+            <div className="flex items-center gap-3">
+              <span className="flex h-11 w-11 items-center justify-center rounded-full bg-emerald-500/25 text-2xl">⚠️</span>
+              <div>
+                <p className="text-xs uppercase tracking-[0.55em] text-emerald-200">Prototype Disclosure</p>
+                <h4 className="text-lg font-semibold tracking-wide text-white">Backend under construction · mock verdicts displayed</h4>
+              </div>
+            </div>
+            <span className="rounded-full border border-white/20 px-4 py-1 text-xs uppercase tracking-[0.3em] text-white/70">Demo mode</span>
+          </div>
+          <p className="relative mt-3 text-sm leading-relaxed text-white/85">
+            Prototype Mode: Backend services are still under development. Risk analysis results shown here are mock outputs. Once the backend is complete, it will be integrated with the
+            frontend and real analysis will be generated along with evidence. User authentication will also be required before performing any analysis.
+          </p>
+        </motion.div>
         <motion.section
           id="about"
           className="glass-panel relative overflow-hidden rounded-[32px] border border-white/5 bg-gradient-to-br from-black/60 via-[#130912]/70 to-black/80 p-8"
