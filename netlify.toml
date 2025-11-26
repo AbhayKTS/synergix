@@ -1,0 +1,11 @@
+[build]
+base = "ai-smart-contract-oracle/frontend"
+command = "npm install && npm run build"
+publish = ".next"
+
+[build.environment]
+NEXT_TELEMETRY_DISABLED = "1"
+NEXT_PUBLIC_USE_MOCK_RISK = "true"
+
+[[plugins]]
+package = "@netlify/plugin-nextjs"
